@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.2.0/mdb.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav">
+        <div class="container-fluid" id="nav">
+            <a class="navbar-brand" href="#">Athlyte</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" id="nav" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="nav">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="nav">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="# ">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true" id="nav">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="card draggable mb-3" id="cards">
+        <div class="card-header">
+            <h5 class="card-title mb-0">Profile Details</h5>
+        </div>
+        <div class="card-body text-center">
+            <img src="data:image/jpeg;base64,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"
+                alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" height="128">
+            <h5 class="card-title mb-0">Jimmy John</h5>
+            <div class="text-white mb-2">Lead Developer/Custodian</div>
+            <div>
+                <a class="btn btn-primary btn-sm" href="#">Follow</a>
+                <a class="btn btn-primary btn-sm" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-message-square">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg> Message </a>
+            </div>
+        </div>
+        <hr class="my-0">
+        <div class="card-body">
+            <h5 class="h6 card-title">Skills</h5>
+            <a href="#" class="badge bg-primary me-1 my-1">HTML</a>
+            <a href="#" class="badge bg-primary me-1 my-1">JavaScript</a>
+            <a href="#" class="badge bg-primary me-1 my-1">Sass</a>
+            <a href="#" class="badge bg-primary me-1 my-1">Angular</a>
+            <a href="#" class="badge bg-primary me-1 my-1">Vue</a>
+            <a href="#" class="badge bg-primary me-1 my-1">React</a>
+            <a href="#" class="badge bg-primary me-1 my-1">Redux</a>
+            <a href="#" class="badge bg-primary me-1 my-1">UI</a>
+            <a href="#" class="badge bg-primary me-1 my-1">UX</a>
+        </div>
+        <hr class="my-0">
+        <div class="card-body">
+            <h5 class="h6 card-title">About</h5>
+            <ul class="list-unstyled mb-0">
+                <li class="mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-home feather-sm me-1">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg> Lives in <a href="#">Port Authority Bus Terminal, NY</a>
+                </li>
+                <li class="mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-briefcase feather-sm me-1">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg> Works at <a href="#">GitHub</a>
+                </li>
+                <li class="mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-map-pin feather-sm me-1">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg> From <a href="#">Grand Central, NY</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <section class="py-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-sm-6 mb-4 mb-xl-0">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5>Projects</h5>
+                        </div>
+                        <span class="text-primary display-4 d-flex align-items-center ml-auto">2</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary w-75" role="progressbar" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 mb-4 mb-xl-0">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5>Clients</h5>
+                        </div>
+                        <span class="text-danger display-4 d-flex align-items-center ml-auto">117</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-danger w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 mb-4 mb-xl-0">
+                    <div class="d-flex justify-content-between ">
+                        <div>
+                            <h5>Invoices</h5>
+                        </div>
+                        <span class="text-info display-4 d-flex align-items-center ml-auto ">248</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-info w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 mb-4 mb-xl-0">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5>Appointments</h5>
+                        </div>
+                        <span class="text-success display-4 d-flex align-items-center ml-auto">14</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-success w-75" role="progressbar" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" id="cards">Order ID</th>
+                <th scope="col" id="cards">Customer</th>
+                <th scope="col" id="cards">Status</th>
+                <th scope="col" id="cards">Total</th>
+                <th scope="col" id="cards">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" id="t">#1001</th>
+                <td id="t">Anthony Smith</td>
+                <td id="t">Lost</td>
+                <td id="t">$85.00</td>
+                <td id="t">02-14-2025</td>
+            </tr>
+            <tr>
+                <th scope="row" id="t">#1002</th>
+                <td id="t">PeeWee The Turtle</td>
+                <td id="t">Delivered</td>
+                <td id="t">$125.00</td>
+
+                <td id="t">02-14-2025</td>
+            </tr>
+            <tr>
+                <th scope="row" id="t">#1003</th>
+                <td id="t">Jane Doe</td>
+                <td id="t">Lost</td>
+                <td id="t">$183.00</td>
+                <td id="t">02-12-2025</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+
+
+    <div class="row removable">
+        <div class="col-lg-4 mb-4 text-center">
+            <div class="card draggable" draggable="true" id="cards">
+                <div class="card-body">
+                    <i class="fa fa-map-marker-alt text-lg mb-3"></i>
+                    <p class="mb-0 text-sm">Street no. 2, Center Avenue</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4 text-center">
+            <div class="card draggable" draggable="true" id="cards">
+                <div class="card-body">
+                    <i class="fa fa-phone text-lg mb-3"></i>
+                    <p class="mb-0 text-sm">+ 123 456 789 000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4 text-center">
+            <div class="card draggable" draggable="true" id="cards">
+                <div class="card-body">
+                    <i class="fa fa-envelope text-lg mb-3"></i>
+                    <p class="mb-0 text-sm">contact@loopple.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12" id=>
+            <div class="card mb-4 draggable" draggable="true" id="cards">
+                <div class="card-body">
+                    <div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-username">Your Name</label>
+                                    <input type="text" id="input-username" class="form-control" placeholder="Username"
+                                        value="lucky.jesse">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-username">Mail</label>
+                                    <input type="email" id="input-username" class="form-control" placeholder="Username"
+                                        value="contact@loopple.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-username">Phone</label>
+                                    <input type="number" id="input-username" class="form-control" placeholder="+54 ..."
+                                        value="lucky.jesse">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label">About Me</label>
+                                    <textarea rows="4" class="form-control"
+                                        placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 5.</textarea>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center mt-3">
+                                <button class="btn btn-lg btn-outline-primary text-white mb-0">Send Message</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #3b5998;"
+                    href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #55acee;"
+                    href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #dd4b39;"
+                    href="#!" role="button"><i class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #ac2bac;"
+                    href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #0082ca;"
+                    href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+                <!-- Github -->
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #333333;"
+                    href="#!" role="button"><i class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+<!-- 
+  Card components inspired by:
+  "Bootstrap Card Components" by Loopple
+  Source: https://www.loopple.com/components/bootstrap/cards?page=1
+  Accessed: 02/21/2025
+-->
+
+<!-- 
+  Card components inspired by:
+  "Bootstrap Card Components" by Loopple
+  Source: https://www.loopple.com/components/bootstrap/cards
+  Accessed: 02/21/2025
+
+  
+-->
+
+<!-- 
+  Contacts section inspired by:
+  "Bootstrap Contacts Section" by Loopple
+  Source: https://www.loopple.com/components/bootstrap/contacts-section
+  Accessed: 02/21/2025
+-->
+
+<!-- 
+  Social media icons footer inspired by:
+  "Social Media Icons Footer" - MDBootstrap Documentation
+  Source: https://mdbootstrap.com/docs/standard/extended/social-media-icons-footer/
+  Accessed: 02/21/2025
+-->
+
+<!-- 
+  Progress bar component inspired by:
+  "Bootstrap Progress Bar Classes" by Shuffle.dev
+  Source: https://shuffle.dev/bootstrap/classes/progress/progress-bar
+  Accessed: 02/21/2025
+-->

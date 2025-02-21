@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/charts/chart-1/assets/css/chart-1.css">
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/"
+                        class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">Athlyte</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                        id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-speedometer2"></i> <span
+                                    class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                            <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                        </li>
+                        <li>
+                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                                <i class="fs-4 bi-bootstrap"></i> <span
+                                    class="ms-1 d-none d-sm-inline">Analytics</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span>
+                                        1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span>
+                                        2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span>
+                                        1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span>
+                                        2</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span>
+                                        3</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span>
+                                        4</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown pb-4">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                            id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="data:image/jpeg;base64,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"
+                                alt="hugenerd" width="30" height="30" class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1">Jimmy John</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                            <li><a class="dropdown-item" href="#">New project...</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col py-3">
+                <!-- start here -->
+                <div class="card mb-4 draggable" id="cards">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-capitalize text-white font-weight-bold">Today's Money
+                                    </p>
+                                    <div class="d-flex align-items-center my-2">
+                                        <span class="badge bg-success-soft text-xxs">
+                                            <i class="fas fa-angle-up text-success" aria-hidden="true"></i>
+                                        </span>
+                                        <span class="text-xs font-weight-bolder ms-1">+55%</span>
+                                    </div>
+                                    <h4 class="font-weight-bolder mb-0">
+                                        $53,000
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-primary shadow text-center border-radius-md ms-auto">
+                                    <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4 draggable" id="cards">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-capitalize text-white font-weight-bold">Orders Today</p>
+                                    <div class="d-flex align-items-center my-2">
+                                        <span class="badge bg-success-soft text-xxs">
+                                            <i class="fas fa-angle-up text-success" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <h4 class="font-weight-bolder mb-0">
+                                        $58
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-primary shadow text-center border-radius-md ms-auto">
+                                    <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4 draggable" id="cards">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-capitalize text-white font-weight-bold">Active Users</p>
+                                    <div class="d-flex align-items-center my-2">
+                                        <span class="badge bg-success-soft text-xxs">
+                                            <i class="fas fa-angle-up text-success" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <h4 class="font-weight-bolder mb-0">
+                                        120
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-primary shadow text-center border-radius-md ms-auto">
+                                    <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4 draggable" id="cards">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-capitalize text-white font-weight-bold">Low Stock Items
+                                    </p>
+                                    <div class="d-flex align-items-center my-2">
+                                        <span class="badge bg-success-soft text-xxs">
+                                            <i class="fas fa-angle-up text-success" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <h4 class="font-weight-bolder mb-0">
+                                        4 </h4>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-primary shadow text-center border-radius-md ms-auto">
+                                    <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Chart 1 - Bootstrap Brain Component -->
+                <section class="py-3 py-md-5">
+                    <div class="container">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-lg-9 col-xl-8">
+                                    <div class="card widget-card border-light shadow-sm" id="cards">
+                                        <div class="card-body p-4">
+                                            <div
+                                                class="d-block d-sm-flex align-items-center justify-content-between mb-3">
+                                                <div class="mb-3 mb-sm-0">
+                                                    <h5 class="card-title widget-card-title">Currently Viewing : Lost
+                                                        Items</h5>
+                                                </div>
+                                                <div>
+                                                    <select class="form-select text-secondary border-light-subtle">
+                                                        <option value="1">February 2025</option>
+                                                        <option value="2">April 2025</option>
+                                                        <option value="3">March 2025</option>
+                                                        <option value="4">April 2025</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div id="bsb-chart-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="cards">Order ID</th>
+                            <th scope="col" id="cards">Customer</th>
+                            <th scope="col" id="cards">Status</th>
+                            <th scope="col" id="cards">Total</th>
+                            <th scope="col" id="cards">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" id="t">#1001</th>
+                            <td id="t">Anthony Smith</td>
+                            <td id="t">Lost</td>
+                            <td id="t">$85.00</td>
+                            <td id="t">02-14-2025</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="t">#1002</th>
+                            <td id="t">PeeWee The Turtle</td>
+                            <td id="t">Delivered</td>
+                            <td id="t">$125.00</td>
+
+                            <td id="t">02-14-2025</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="t">#1003</th>
+                            <td id="t">Jane Doe</td>
+                            <td id="t">Lost</td>
+                            <td id="t">$183.00</td>
+                            <td id="t">02-12-2025</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://unpkg.com/bs-brain@2.0.4/components/charts/chart-1/assets/controller/chart-1.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+<!-- 
+  Sidebar template inspired by:
+  "Bootstrap 5 Sidebar Examples" by Codeply
+  Source: https://dev.to/codeply/bootstrap-5-sidebar-examples-38pb
+  Accessed: 02/21/2025
+-->
+
+<!-- 
+  Table structure and styles inspired by:
+  "Tables Overview" - Bootstrap Documentation (v5.3)
+  Source: https://getbootstrap.com/docs/5.3/content/tables/#overview
+  Accessed: 02/21/2025
+-->
+
+<!-- 
+  Line chart card component inspired by:
+  "Bootstrap Line Chart Card Example" by Bootstrap Brain
+  Source: https://bootstrapbrain.com/component/bootstrap-line-chart-card-example/
+  Accessed: 02/21/2025
+-->
+
+<!-- 
+  Card components inspired by:
+  "Bootstrap Card Components" by Loopple
+  Source: https://www.loopple.com/components/bootstrap/cards?page=1
+  Accessed: 02/21/2025
+-->
